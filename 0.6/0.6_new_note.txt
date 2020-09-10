@@ -1,0 +1,15 @@
+note over browser:
+User submits form
+end note
+
+note over browser:
+browser starts executing callback
+code which updates the page by adding
+the note and then post change to server 
+end note
+
+browser->browser: redrawNotes()
+browser->browser: sendToServer(note)
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: [{"message":"note created"}]
